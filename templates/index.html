@@ -1,0 +1,260 @@
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <title>Personalised AI Diet Planner</title>-->
+<!--</head>-->
+<!--<body>-->
+<!--    <h2>Personalised AI Diet Planner</h2>-->
+<!--    <br><br>-->
+<!--    <form action="" method="post">-->
+<!--        <label for="">Enter your name:</label>-->
+<!--        <br>-->
+<!--        <input type="text" name="name">-->
+<!--        <br><br>-->
+<!--        <label for="">Gender</label>-->
+<!--        <br>-->
+<!--        <select name="gender" id="">-->
+<!--            <option value="male">Male</option>-->
+<!--            <option value="female">Female</option>-->
+<!--        </select>-->
+<!--        <br><br>-->
+<!--        <label for="">Enter your age:</label>-->
+<!--        <br>-->
+<!--        <input type="number" name="age">-->
+<!--        <br><br>-->
+<!--        <label for="">Enter your Height(cm):</label>-->
+<!--        <br>-->
+<!--        <input type="number" name="height">-->
+<!--        <br><br>-->
+<!--        <label for="">Enter your weight(kg):</label>-->
+<!--        <br>-->
+<!--        <input type="number" name="weight">-->
+<!--        <br><br>-->
+<!--        <label for="">Target</label>-->
+<!--        <br>-->
+<!--        <select name="target" id="">-->
+<!--            <option value="Weight Gain">Weight Gain</option>-->
+<!--            <option value="Weight Loss">Weight Loss</option>-->
+<!--        </select>-->
+<!--        <br><br>-->
+<!--        <label for="">Select your food preference:</label>-->
+<!--        <br>-->
+<!--        <select name="fp" id="">-->
+<!--            <option value="">Vegetarion</option>-->
+<!--            <option value="">Non - Vegetarion</option>-->
+
+<!--        </select>-->
+<!--        <br><br>-->
+<!--        <input type="submit">-->
+<!--    </form>-->
+
+<!--</body>-->
+<!--</html>-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personalised AI Diet Planner</title>
+
+    <style>
+
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body{
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #00c6ff, #0072ff, #6a11cb);
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* Animated Background Circles */
+
+        body::before,
+        body::after{
+            content: "";
+            position: absolute;
+            width: 350px;
+            height: 350px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.15);
+            filter: blur(40px);
+            animation: float 8s ease-in-out infinite;
+        }
+
+        body::before{
+            top: -100px;
+            left: -100px;
+        }
+
+        body::after{
+            bottom: -100px;
+            right: -100px;
+            animation-delay: 3s;
+        }
+
+        @keyframes float{
+            0%{
+                transform: translateY(0px);
+            }
+            50%{
+                transform: translateY(30px);
+            }
+            100%{
+                transform: translateY(0px);
+            }
+        }
+
+        /* Glassmorphism Container */
+
+        .container{
+            width: 420px;
+            padding: 35px;
+            border-radius: 25px;
+            background: rgba(255,255,255,0.12);
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(255,255,255,0.2);
+            box-shadow: 0 8px 32px rgba(0,0,0,0.25);
+            color: white;
+            animation: fadeIn 1s ease;
+        }
+
+        @keyframes fadeIn{
+            from{
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            to{
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        h2{
+            text-align: center;
+            margin-bottom: 25px;
+            font-size: 30px;
+            letter-spacing: 1px;
+        }
+
+        form label{
+            font-size: 15px;
+            font-weight: 500;
+        }
+
+        input,
+        select{
+            width: 100%;
+            padding: 12px 15px;
+            margin-top: 8px;
+            margin-bottom: 18px;
+            border: none;
+            outline: none;
+            border-radius: 12px;
+            background: rgba(255,255,255,0.18);
+            color: white;
+            font-size: 15px;
+            transition: all 0.3s ease;
+        }
+
+        input::placeholder{
+            color: #eee;
+        }
+
+        select option{
+            color: black;
+        }
+
+        input:focus,
+        select:focus{
+            transform: scale(1.03);
+            background: rgba(255,255,255,0.25);
+            box-shadow: 0 0 15px rgba(255,255,255,0.4);
+        }
+
+        /* Submit Button */
+
+        input[type="submit"]{
+            background: linear-gradient(135deg, #00f260, #0575e6);
+            cursor: pointer;
+            font-weight: bold;
+            letter-spacing: 1px;
+            transition: 0.4s;
+        }
+
+        input[type="submit"]:hover{
+            transform: translateY(-3px) scale(1.04);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+        }
+
+        /* Responsive */
+
+        @media(max-width: 500px){
+
+            .container{
+                width: 90%;
+                padding: 25px;
+            }
+
+            h2{
+                font-size: 24px;
+            }
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h2>🥗 Personalised AI Diet Planner</h2>
+
+        <form action="" method="post">
+            <label>Enter your name:</label>
+            <input type="text" name="name" placeholder="Enter your name">
+
+            <label>Gender</label>
+            <select name="gender">
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+            </select>
+            <label>Enter your age:</label>
+            <input type="number" name="age" placeholder="Enter your age">
+
+            <label>Enter your Height(cm):</label>
+            <input type="number" name="height" placeholder="Enter your height">
+
+            <label>Enter your weight(kg):</label>
+            <input type="number" name="weight" placeholder="Enter your weight">
+
+            <label>Target</label>
+            <select name="target">
+                <option value="Weight Gain">Weight Gain</option>
+                <option value="Weight Loss">Weight Loss</option>
+            </select>
+            <label>Select your food preference:</label>
+            <select name="fp">
+                <option value="Vegetarian">Vegetarian</option>
+                <option value="Non-Vegetarian">Non-Vegetarian</option>
+            </select>
+
+            <input type="submit" value="Generate Diet Plan">
+
+        </form>
+
+    </div>
+
+</body>
+</html>
