@@ -15,7 +15,8 @@ def index():
     if request.method =="GET":
         return render_template('index.html')
 
-    elif request.method=='POST':
+    # elif request.method=='POST':
+    else:
 
         v1=request.form['name']
         v2=request.form['gender']
