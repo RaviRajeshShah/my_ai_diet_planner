@@ -5,7 +5,7 @@ import os
 
 
 gemini_api_key=os.getenv('gemini_api_key')
-client = genai.Client(api_key="")
+client = genai.Client(api_key=gemini_api_key)
 app=Flask(__name__)
 
 @app.route('/',methods=['GET','POST'])
